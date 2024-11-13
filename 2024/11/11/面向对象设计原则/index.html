@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="小马哥">
+    
+    <title>
+        
+            面向对象设计原则 |
+        
+        M
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"mayehui.github.io","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"M","author":"小马哥","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/                        || fa-solid fa-home","archives":"/archives            || fa-solid fa-box-archive","tags":"/tags                  || fa-solid fa-tags","categories":"/categories      || fa-solid fa-layer-group","about":"/about                || fa-solid fa-user-graduate"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"无人扶我青云志，我自踏雪之山巅；||若是命中无此运，亦可孤身登昆仑。","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/mayehui","weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2020,"word_count":true,"site_deploy":{"enable":true,"provider":"github","url":"https://github.com"},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.3"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               M
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-home"></i>
+                                
+                                HOME
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-box-archive"></i>
+                                
+                                ARCHIVES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-tags"></i>
+                                
+                                TAGS
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-layer-group"></i>
+                                
+                                CATEGORIES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-user-graduate"></i>
+                                
+                                ABOUT
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-home"></i>
+                                </span>
+                            
+                            HOME
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-box-archive"></i>
+                                </span>
+                            
+                            ARCHIVES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-tags"></i>
+                                </span>
+                            
+                            TAGS
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-layer-group"></i>
+                                </span>
+                            
+                            CATEGORIES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-user-graduate"></i>
+                                </span>
+                            
+                            ABOUT
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        面向对象设计原则
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">小马哥</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-11-11 15:14:48</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Wed Nov 13 2024 08:15:31 GMT+0000">2024-11-13 08:15:31</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1/">面向对象设计</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>4k Words</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>13 Mins</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="面向对象设计原则"><a href="#面向对象设计原则" class="headerlink" title="面向对象设计原则"></a>面向对象设计原则</h2><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/11/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/solid.png"
+                        class="" title="图片引用方法一"
+                 >
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>
+SOLID 原则是一个缩写，描述了表达软件开发原则的五项基本原则。 这些原则旨在提高软件的可维护性、灵活性、易维护性和可重用性。 SOLID 原则与软件架构和面向对象编程（OOP）的概念关系密切。 让我们通过 Flutter 逐一研究每条原则。
+</p>
+
+<h3 id="1-单一功能原则-Single-Responsibility-Principle"><a href="#1-单一功能原则-Single-Responsibility-Principle" class="headerlink" title="1.单一功能原则(Single Responsibility Principle)"></a>1.单一功能原则(Single Responsibility Principle)</h3><p>
+每个类应只有一个引起其变化的原因，即每个类只负责一个功能或一个职责。这样可以减少类之间的耦合，使代码更加清晰。
+</p>
+
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>
+如果我们有一个名为User的类，它同时负责用户认证和用户信息管理，这就违反了单一职责原则。我们应该将其拆分为两个类：UserAuthentication和UserInfo。
+</p>
+
+<h4 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h4><p>
+解耦和增强内聚性（高内聚，低耦合）
+</p>
+
+<h3 id="2-开放-封闭原则-Open-Closed-Principle"><a href="#2-开放-封闭原则-Open-Closed-Principle" class="headerlink" title="2.开放-封闭原则(Open-Closed Principle)"></a>2.开放-封闭原则(Open-Closed Principle)</h3><p>
+软件中的对象（类、模块、函数等）应该对扩展开放，对修改封闭。也就是说，当需要对功能进行扩展时，可以通过增加新代码而不是修改已有代码来实现。通常通过继承和接口实现该原则。
+</p>
+
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><p>
+如果我们需要在一个已经存在的类中增加新的功能，我们应该优先考虑通过继承或组合的方式实现，而不是直接修改这个类。
+</p>
+
+<h4 id="个人理解-1"><a href="#个人理解-1" class="headerlink" title="个人理解"></a>个人理解</h4><p>
+对扩展开放，对修改关闭。即在设计一个模块的时候，应当使这个模块可以在不被修改的前提下被扩展。
+根据开闭原则，在设计一个软件系统模块（类，方法）的时候，应该可以在不修改原有的模块（修改关闭）的基础上，能扩展其功能（扩展开放）。
+</p>
+
+<h3 id="3-里氏替换原则-Liskov-Substitution-Principle"><a href="#3-里氏替换原则-Liskov-Substitution-Principle" class="headerlink" title="3. 里氏替换原则 (Liskov-Substitution Principle)"></a>3. 里氏替换原则 (Liskov-Substitution Principle)</h3><p>
+子类对象必须能够替换父类对象，并且保证系统的行为不发生变化。即在使用父类的地方可以使用子类而不会出现问题。这可以确保继承关系的正确性，并避免出现违背继承关系的设计。
+</p>
+
+<h4 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h4><p>如果我们有一个Animal类和一个Dog类（Dog是Animal的子类），那么我们应该确保Dog对象可以在任何需要Animal对象的地方使用，而不会出现错误。</p>
+
+<h4 id="个人理解-2"><a href="#个人理解-2" class="headerlink" title="个人理解"></a>个人理解</h4><p>
+
+<ul>
+<li>在任何父类出现的地方都可以用他的子类来替代（子类应当可以替换父类并出现在父类能够出现的任何地方）子类必须完全实现父类的方法。在类中调用其他类是务必要使用父类或接口，如果不能使用父类或接口，则说明类的设计已经违背了LSP原则。</li>
+<li>子类可以有自己的个性。子类当然可以有自己的行为和外观了，也就是方法和属性</li>
+<li>覆盖或实现父类的方法时输入参数可以被放大。即子类可以重载父类的方法，但输入参数应比父类方法中的大，这样在子类代替父类的时候，调用的仍然是父类的方法。即以子类中方法的前置条件必须与超类中被覆盖的方法的前置条件相同或者更宽松。</li>
+<li>覆盖或实现父类的方法时输出结果可以被缩小。</p></li>
+</ul>
+<h3 id="4-接口隔离原则-Interface-Segregation-Principle"><a href="#4-接口隔离原则-Interface-Segregation-Principle" class="headerlink" title="4. 接口隔离原则 (Interface Segregation Principle)"></a>4. 接口隔离原则 (Interface Segregation Principle)</h3><p>接口应该是细化和专门的，不要强迫实现类去实现不需要的接口方法。即多个小接口优于一个大接口，保持接口的单一职责。</p>
+
+<h4 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h4><p>如果我们有一个包含许多方法的UserService接口，我们可以考虑将其拆分为几个更小的接口，如UserAuthenticationService、UserInfoService等。这样，客户端就可以只依赖于它们需要的接口，而不是被迫依赖于所有接口。</p>
+
+<h4 id="个人理解-3"><a href="#个人理解-3" class="headerlink" title="个人理解"></a>个人理解</h4><p>
+不应该强迫客户程序依赖他们不需要使用的方法。
+一个接口不需要提供太多的行为，一个接口应该只提供一种对外的功能，不应该把所有的操作都封装到一个接口当中.
+</p>
+
+<h3 id="5-依赖倒置原则-Dependency-Inversion-Principle"><a href="#5-依赖倒置原则-Dependency-Inversion-Principle" class="headerlink" title="5. 依赖倒置原则 (Dependency Inversion Principle)"></a>5. 依赖倒置原则 (Dependency Inversion Principle)</h3><p>高层模块不应该依赖于低层模块，两者都应该依赖于抽象；抽象不应该依赖于细节，细节应该依赖于抽象。通过依赖抽象而不是具体实现，可以使得高层模块和低层模块之间的耦合度降低，系统更易于维护和扩展。</p>
+
+<h4 id="示例-4"><a href="#示例-4" class="headerlink" title="示例"></a>示例</h4><p>如果我们有一个UserController类和一个UserRepository类，UserController类不应该直接依赖于UserRepository类的具体实现，而应该依赖于一个抽象的UserRepositoryInterface接口。这样，我们就可以在不修改UserController类的情况下更换UserRepository的具体实现。</p>
+
+<h4 id="个人理解-4"><a href="#个人理解-4" class="headerlink" title="个人理解"></a>个人理解</h4><p>
+要依赖于抽象，不要依赖于具体的实现
+
+<ul>
+<li>高层模块不应该依赖低层模块，两者都应该依赖其抽象（抽象类或接口）</li>
+<li>抽象不应该依赖细节（具体实现）</li>
+<li>细节（具体实现）应该依赖抽象。</p></li>
+</ul>
+<h3 id="以上这些原则合起来可以简称为-SOLID-原则，它们是面向对象设计的核心思想。"><a href="#以上这些原则合起来可以简称为-SOLID-原则，它们是面向对象设计的核心思想。" class="headerlink" title="以上这些原则合起来可以简称为 SOLID 原则，它们是面向对象设计的核心思想。"></a>以上这些原则合起来可以简称为 SOLID 原则，它们是面向对象设计的核心思想。</h3><h3 id="6-迪米特原则（拓展）"><a href="#6-迪米特原则（拓展）" class="headerlink" title="6.迪米特原则（拓展）"></a>6.迪米特原则（拓展）</h3><p>
+
+</p>
+
+<h4 id="示例-5"><a href="#示例-5" class="headerlink" title="示例"></a>示例</h4><p>如果我们有一个User类和一个Order类，User类不需要知道Order类的内部实现细节，只需要知道如何创建和获取订单即可。</p>
+
+<h4 id="个人理解-5"><a href="#个人理解-5" class="headerlink" title="个人理解"></a>个人理解</h4><p>
+一个对象应当对其他对象有尽可能少的了解,不和陌生人说话。（类间解耦，低耦合）意思就是降低各个对象之间的耦合，提高系统的可维护性；在模块之间只通过接口来通信，而不理会模块的内部工作原理，可以使各个模块的耦合成都降到最低，促进软件的复用
+</p>
+
+<h2 id="7-组合-聚合复用原则（拓展）"><a href="#7-组合-聚合复用原则（拓展）" class="headerlink" title="7.组合&#x2F;聚合复用原则（拓展）"></a>7.组合&#x2F;聚合复用原则（拓展）</h2><p></p>
+
+<h4 id="示例-6"><a href="#示例-6" class="headerlink" title="示例"></a>示例</h4><p>如果我们有一个Shape类和一个Circle类（Circle是Shape的子类），我们应该考虑是否可以通过组合的方式实现，即Circle类中包含一个Shape对象，而不是直接继承自Shape类。</p>
+
+<h4 id="个人理解-6"><a href="#个人理解-6" class="headerlink" title="个人理解"></a>个人理解</h4><p>
+尽量使用对象组合，而不是继承来达到复用的目的。该原则就是在一个新的对象里面使用一些已有的对象，使之成为新对象的一部分：新的对象通过向这些对象的委派达到复用已有功能的目的。
+
+<ul>
+<li>在复用时应优先考虑使用合成聚合而不是继承</p></li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p> 我们对这七种设计原则有了一个基本的认知，接下来我们在根据功能特点提炼一下
+<br>
+
+<ul>
+<li>开闭原则：控制需求变动风险，缩小维护成本 <p>
+这一条放在第一位来理解，它的含义是对扩展开放，对修改关闭。解释一下就是，我们写完的代码，不能因为需求变化就修改。我们可以通过新增代码的方式来解决变化的需求。
+当然，这是一种理想的状态，在现实中，我们要尽量的缩小这种修改。
+<br></li>
+</ul>
+<p>再解释一下这条原则的意义所在，我们采用逆向思维方式来想。如果每次需求变动都去修改原有的代码，那原有的代码就存在被修改错误的风险，当然这其中存在有意和无意的修改，都会导致原有正常运行的功能失效的风险，这样很有可能会展开可怕的蝴蝶效应，使维护工作剧增。<br>说到底，开闭原则除了表面上的可扩展性强以外，在企业中更看重的是维护成本。</p>
+<br>
+所以，开闭原则是设计模式的第一大原则，以下几种原则，都是为此原则服务的。
+</p>
+
+<ul>
+<li><p>里氏替换原则：尽量使用精准的抽象类或接口</p>
+<p>
+此原则的含义是子类可以在任何地方替换它的父类。解释一下，这是多态的前提，我们后面很多所谓的灵活，都是不改变声明类型的情况下，改变实例化类来完成的需求变更。当然，继承的特性看似天然就满足这个条件。但这里更注重的是继承的应用问题，我们必须保证我们的子类和父类划分是精准的。
+</p>
+</li>
+<li><p>单一职责原则：拆分到最小单位，解决复用和组合问题</p>
+<p>
+单一职责的含义是：类的职责单一，引起类变化的原因单一。解释一下，这也是灵活的前提，如果我们把类拆分成最小的职能单位，那组合与复用就简单的多了，如果一个类做的事情太多，在组合的时候，必然会产生不必要的方法出现，这实际上是一种污染。
+<br>
+举个例子，我们在绘制图案的时候，用“点”组成图和用“直线”组成图，哪个更灵活呢？一定是“点”，它可以绘制任何图形，而直线只能绘制带有直线条的图案，它起码无法画圆。</li>
+</ul>
+</p>
+
+
+<ul>
+<li>接口隔离原则：拆分，从接口开始<p>
+接口隔离原则可以说是单一职责的必要手段，它的含义是尽量使用职能单一的接口，而不使用职能复杂、全面的接口。很好理解，接口是为了让子类实现的，如果子类想达到职能单一，那么接口也必须满足职能单一。</li>
+</ul>
+<br>
+相反，如果接口融合了多个不相关的方法，那它的子类就被迫要实现所有方法，尽管有些方法是根本用不到的。这就是接口污染。
+</p>
+
+<ul>
+<li>依赖倒置原则：面向抽象编程，解耦调用和被调用者。<p>
+想要理解依赖倒置原则，必须先理解传统的解决方案。面相对象的初期的程序，被调用者依赖于调用者。也就是调用者决定被调用者有什么方法，有什么样的实现方式，这种结构在需求变更的时候，会付出很大的代价，甚至推翻重写。</li>
+</ul>
+<br>
+依赖倒置原则就是要求调用者和被调用者都依赖抽象，这样两者没有直接的关联和接触，在变动的时候，一方的变动不会影响另一方的变动。
+
+<br>
+其实，依赖倒置和前面的原则是相辅相成的，都强调了抽象的重要性。
+</p>
+
+<ul>
+<li>迪米特原则：不和陌生人说话，又是找中介<p>
+迪米特原则要求尽量的封装，尽量的独立，尽量的使用低级别的访问修饰符。这是封装特性的典型体现。</li>
+</ul>
+<br>
+一个类如果暴露太多私用的方法和字段，会让调用者很茫然。并且会给类造成不必要的判断代码。所以，我们使用尽量低的访问修饰符，让外界不知道我们的内部。这也是面向对象的基本思路。这是迪米特原则的一个特性，无法了解类更多的私有信息。
+
+<br>
+另外，迪米特原则要求类之间的直接联系尽量的少，两个类的访问，通过第三个中介类来实现
+</p>
+
+<ul>
+<li>组合&#x2F;聚合原则：我只是用你的方法，我们不一定是同类<p>
+此原则的含义是，如果只是达到代码复用的目的，尽量使用组合与聚合，而不是继承。这里需要解释一下，组合聚合只是引用其他的类的方法，而不会受引用的类的继承而改变血统。</li>
+</ul>
+<br>
+继承的耦合性更大，比如一个父类后来添加实现一个接口或者去掉一个接口，那子类可能会遭到毁灭性的编译错误，但如果只是组合聚合，只是引用类的方法，就不会有这种巨大的风险，同时也实现了复用。
+</p>
+
+<h3 id="在结合实际场景使用时，应注意以下几点"><a href="#在结合实际场景使用时，应注意以下几点" class="headerlink" title="在结合实际场景使用时，应注意以下几点"></a>在结合实际场景使用时，应注意以下几点</h3><p>
+
+<ul>
+<li>a）高内聚、低耦合和单一职能的“冲突”</li>
+</ul>
+<p>实际上，这两者是一回事。内聚，要求一个类把所有相关的方法放在一起，初看是职能多，但有个“高”，就是要求把联系非常紧密的功能放在一起，也就是说，从整体看，是一个职能的才能放在一起，所以，两者是不同的表述而已。</p>
+<br>
+这里很多人理解成复合类，但复合类不是高内聚，而是杂乱的放在一起，是一种设计失误而已。
+
+<ul>
+<li>b）多个单一职责接口的灵活性和声明类型问题</li>
+</ul>
+<p>如果一个类实现多个接口，那么这个类应该用哪个接口类型声明呢？应该是用一个抽象类来继承多个接口，而实现类来继承这个接口。声明的时候，类型是抽象类。</p>
+<ul>
+<li>c）最少知识原则和中介类泛滥两种极端情况<br>这是另一种设计的失误。迪米特原则要求类之间要用中介来通讯，但类多了以后，会造成中介类泛滥的情况，这种情况，我们可以考虑中介模式，用一个总的中介类来实现。</li>
+</ul>
+<p>当然，设计模式都有自己的缺陷，迪米特原则也不是十全十美，交互类非常繁多的情况下，要适当的牺牲设计原则。</p>
+<ul>
+<li>d）继承和组合复用原则的 <strong>冲突</strong></li>
+</ul>
+<p>继承也能实现复用，那这个原则是不是要抛弃继承了？不是的。</p>
+<br>
+继承更注重的是“血统”，也就是什么类型的。而组合聚合更注重的是借用“技能”。并且，组合聚合中，两个类是部分与整体的关系，组合聚合可以由多个类的技能组成。在C#和Java中只有单继承。
+
+<br>
+这个原则不是告诉我们不用继承了，都用组合聚合，而是在“复用”这个点上，我们优先使用组合聚合。
+
+</p>
+
+<h2 id="Q-A"><a href="#Q-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p>
+1、这么多设计模式，都要学习和使用么？
+
+<p>答：我们只是掌握总体的原则，然后学习常用的就行了。实际开发中也不是每种设计模式都会经常用到。因为归根结底，设计模式也好，架构也好，都是为需求服务的，没有需求业务模型，不能生搬硬套模式。我们在学习的时候，多学一些总是好的，但只是为了开阔自己的眼界。</p>
+<p>2、设计模式是规范么？是不是好的程序必须用设计模式？</p>
+<p>答：严格来说，好的程序遵循的是设计原则，而非设计模式。现在就出现很多新的演变出来的模式，这些都是因为出现了新业务的原因，设计模式不是规范，只是一种借鉴。</p>
+<p>3、使用设计模式会不会增加开发难度？</p>
+<p>答：开发阶段会的，而且会延长开发时间。但一个项目或产品从开始到结束，开发只是其中很小的一部分，考虑到维护和扩展成本，才会出现设计模式。从整体考虑，设计模式是减少了开发时间和成本的。</p>
+</p>
+
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>《研磨设计模式》</p>
+
+                    
+                </div>
+
+                
+                        
+<div class="post-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="copyright-post-title border-box text-ellipsis">
+                面向对象设计原则
+            </div>
+
+            <div class="copyright-post-link border-box text-ellipsis">
+                2024/11/11/面向对象设计原则/
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="copyright-post-author bottom-item">
+                <div class="type">
+                    Author
+                </div>
+                <div class="content">小马哥</div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    Published
+                </div>
+                <div class="content">2024-11-11 15:14</div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    License
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed" target="_blank">
+                        
+                            <i class="fa-brands fa-creative-commons"></i>
+                            <i class="fa-brands fa-creative-commons-by"></i>
+                            <i class="fa-brands fa-creative-commons-nc"></i>
+                            <i class="fa-brands fa-creative-commons-sa"></i>
+                        
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="Copy copyright info" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2024/11/11/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82/"
+                                   title="简单工厂"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">简单工厂</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="nav-number">1.</span> <span class="nav-text">面向对象设计原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8D%95%E4%B8%80%E5%8A%9F%E8%83%BD%E5%8E%9F%E5%88%99-Single-Responsibility-Principle"><span class="nav-number">2.1.</span> <span class="nav-text">1.单一功能原则(Single Responsibility Principle)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.1.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3"><span class="nav-number">2.1.2.</span> <span class="nav-text">个人理解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BC%80%E6%94%BE-%E5%B0%81%E9%97%AD%E5%8E%9F%E5%88%99-Open-Closed-Principle"><span class="nav-number">2.2.</span> <span class="nav-text">2.开放-封闭原则(Open-Closed Principle)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">个人理解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99-Liskov-Substitution-Principle"><span class="nav-number">2.3.</span> <span class="nav-text">3. 里氏替换原则 (Liskov-Substitution Principle)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">个人理解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99-Interface-Segregation-Principle"><span class="nav-number">2.4.</span> <span class="nav-text">4. 接口隔离原则 (Interface Segregation Principle)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-3"><span class="nav-number">2.4.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3-3"><span class="nav-number">2.4.2.</span> <span class="nav-text">个人理解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E4%BE%9D%E8%B5%96%E5%80%92%E7%BD%AE%E5%8E%9F%E5%88%99-Dependency-Inversion-Principle"><span class="nav-number">2.5.</span> <span class="nav-text">5. 依赖倒置原则 (Dependency Inversion Principle)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-4"><span class="nav-number">2.5.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3-4"><span class="nav-number">2.5.2.</span> <span class="nav-text">个人理解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E4%B8%8A%E8%BF%99%E4%BA%9B%E5%8E%9F%E5%88%99%E5%90%88%E8%B5%B7%E6%9D%A5%E5%8F%AF%E4%BB%A5%E7%AE%80%E7%A7%B0%E4%B8%BA-SOLID-%E5%8E%9F%E5%88%99%EF%BC%8C%E5%AE%83%E4%BB%AC%E6%98%AF%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3%E3%80%82"><span class="nav-number">2.6.</span> <span class="nav-text">以上这些原则合起来可以简称为 SOLID 原则，它们是面向对象设计的核心思想。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E8%BF%AA%E7%B1%B3%E7%89%B9%E5%8E%9F%E5%88%99%EF%BC%88%E6%8B%93%E5%B1%95%EF%BC%89"><span class="nav-number">2.7.</span> <span class="nav-text">6.迪米特原则（拓展）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-5"><span class="nav-number">2.7.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3-5"><span class="nav-number">2.7.2.</span> <span class="nav-text">个人理解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E7%BB%84%E5%90%88-%E8%81%9A%E5%90%88%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%99%EF%BC%88%E6%8B%93%E5%B1%95%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">7.组合&#x2F;聚合复用原则（拓展）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-6"><span class="nav-number">3.0.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3-6"><span class="nav-number">3.0.2.</span> <span class="nav-text">个人理解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E7%BB%93%E5%90%88%E5%AE%9E%E9%99%85%E5%9C%BA%E6%99%AF%E4%BD%BF%E7%94%A8%E6%97%B6%EF%BC%8C%E5%BA%94%E6%B3%A8%E6%84%8F%E4%BB%A5%E4%B8%8B%E5%87%A0%E7%82%B9"><span class="nav-number">4.1.</span> <span class="nav-text">在结合实际场景使用时，应注意以下几点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-A"><span class="nav-number">5.</span> <span class="nav-text">Q&amp;A</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">小马哥</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+        
+        <div class="deploy-info info-item">
+            
+                <a target="_blank" rel="nofollow" href="https://github.com">
+            
+            This site is deployed on <span class="tooltip" data-tooltip-content="GitHub Pages"><img src="/images/brands/github.png"></span>
+            
+                </a>
+            
+        </div>
+    
+
+    
+        <div class="count-info info-item">
+            
+                <span class="count-item border-box word">
+                    <span class="item-type border-box">Total words</span>
+                    <span class="item-value border-box word">4k</span>
+                </span>
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="nav-number">1.</span> <span class="nav-text">面向对象设计原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8D%95%E4%B8%80%E5%8A%9F%E8%83%BD%E5%8E%9F%E5%88%99-Single-Responsibility-Principle"><span class="nav-number">2.1.</span> <span class="nav-text">1.单一功能原则(Single Responsibility Principle)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.1.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3"><span class="nav-number">2.1.2.</span> <span class="nav-text">个人理解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BC%80%E6%94%BE-%E5%B0%81%E9%97%AD%E5%8E%9F%E5%88%99-Open-Closed-Principle"><span class="nav-number">2.2.</span> <span class="nav-text">2.开放-封闭原则(Open-Closed Principle)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">个人理解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99-Liskov-Substitution-Principle"><span class="nav-number">2.3.</span> <span class="nav-text">3. 里氏替换原则 (Liskov-Substitution Principle)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">个人理解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99-Interface-Segregation-Principle"><span class="nav-number">2.4.</span> <span class="nav-text">4. 接口隔离原则 (Interface Segregation Principle)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-3"><span class="nav-number">2.4.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3-3"><span class="nav-number">2.4.2.</span> <span class="nav-text">个人理解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E4%BE%9D%E8%B5%96%E5%80%92%E7%BD%AE%E5%8E%9F%E5%88%99-Dependency-Inversion-Principle"><span class="nav-number">2.5.</span> <span class="nav-text">5. 依赖倒置原则 (Dependency Inversion Principle)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-4"><span class="nav-number">2.5.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3-4"><span class="nav-number">2.5.2.</span> <span class="nav-text">个人理解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E4%B8%8A%E8%BF%99%E4%BA%9B%E5%8E%9F%E5%88%99%E5%90%88%E8%B5%B7%E6%9D%A5%E5%8F%AF%E4%BB%A5%E7%AE%80%E7%A7%B0%E4%B8%BA-SOLID-%E5%8E%9F%E5%88%99%EF%BC%8C%E5%AE%83%E4%BB%AC%E6%98%AF%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3%E3%80%82"><span class="nav-number">2.6.</span> <span class="nav-text">以上这些原则合起来可以简称为 SOLID 原则，它们是面向对象设计的核心思想。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E8%BF%AA%E7%B1%B3%E7%89%B9%E5%8E%9F%E5%88%99%EF%BC%88%E6%8B%93%E5%B1%95%EF%BC%89"><span class="nav-number">2.7.</span> <span class="nav-text">6.迪米特原则（拓展）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-5"><span class="nav-number">2.7.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3-5"><span class="nav-number">2.7.2.</span> <span class="nav-text">个人理解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E7%BB%84%E5%90%88-%E8%81%9A%E5%90%88%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%99%EF%BC%88%E6%8B%93%E5%B1%95%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">7.组合&#x2F;聚合复用原则（拓展）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-6"><span class="nav-number">3.0.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3-6"><span class="nav-number">3.0.2.</span> <span class="nav-text">个人理解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E7%BB%93%E5%90%88%E5%AE%9E%E9%99%85%E5%9C%BA%E6%99%AF%E4%BD%BF%E7%94%A8%E6%97%B6%EF%BC%8C%E5%BA%94%E6%B3%A8%E6%84%8F%E4%BB%A5%E4%B8%8B%E5%87%A0%E7%82%B9"><span class="nav-number">4.1.</span> <span class="nav-text">在结合实际场景使用时，应注意以下几点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-A"><span class="nav-number">5.</span> <span class="nav-text">Q&amp;A</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+            
+<script src="/js/post/copyright-info.js"></script>
+
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
